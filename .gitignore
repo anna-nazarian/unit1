@@ -2,5 +2,4 @@
 unit1-laradock
 unit1-laradock/*
 vendor/
-composer.lock
 .env
