@@ -50,7 +50,7 @@ return [
     |
     */
 
-    'middleware' => ['web', 'auth'],
+    'middleware' => ['web', 'auth', 'permission:access admin panel'],
 
     /*
     |--------------------------------------------------------------------------
