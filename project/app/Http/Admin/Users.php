@@ -75,7 +75,8 @@ class Users extends Section implements Initializable
         return AdminForm::panel()->addBody([
             AdminFormElement::text('name', 'Name')->required(),
             AdminFormElement::text('email', 'E-mail')->required(),
-            AdminFormElement::password('password', 'Password')->required()->hashWithBcrypt()
+            AdminFormElement::password('password', 'Password')->required()->hashWithBcrypt(),
+            AdminFormElement::image('photo')
         ]);
     }
 

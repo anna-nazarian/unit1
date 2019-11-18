@@ -3,3 +3,4 @@ unit1-laradock
 unit1-laradock/*
 vendor/
 .env
+images/
