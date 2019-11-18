@@ -19,7 +19,7 @@ use SleepingOwl\Admin\Navigation\Page;
 //
 // // or
 //
-// AdminSection::addMenuPage(\App\User::class)
+//AdminSection ::addMenuPage(\App\User::class)
 
 return [
     [
@@ -28,10 +28,27 @@ return [
         'url'   => route('admin.dashboard'),
     ],
 
-    [
+    /*[
         'title' => 'Information',
         'icon'  => 'fa fa-exclamation-circle',
         'url'   => route('admin.information'),
+    ],*/
+
+    [
+        'title' => 'Users & Permissions',
+        'icon'  => 'fa fa-exclamation-circle',
+        'accessLogic' => function (Page $page) {
+            return auth()->user()->hasRole('admin');
+        },
+        'pages' => [
+            (new Page(\App\User::class))
+                ->setPriority(100)
+                ->setIcon('fa fa-user')
+               /* ->setAccessLogic(function (Page $page) {
+                    return auth()->user()->hasRole('admin');
+                })*/
+
+        ]
     ],
 
     // Examples
