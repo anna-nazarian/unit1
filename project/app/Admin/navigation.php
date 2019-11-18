@@ -35,6 +35,16 @@ return [
     ],*/
 
     [
+        'title' => 'Content',
+        'icon'  => 'fa fa-edit',
+        'pages' => [
+            (new Page(\App\Category::class))
+                ->setPriority(100)
+                ->setIcon('fa fa-folder')
+
+        ]
+    ],
+    [
         'title' => 'Users & Permissions',
         'icon'  => 'fa fa-exclamation-circle',
         'accessLogic' => function (Page $page) {
